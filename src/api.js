@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL,
+    baseURL:"https://sarvodaya-erp-api-hhb5dmddhjbrfpg0.centralindia-01.azurewebsites.net/api",
 });
 
 // Automatically attach token for every request
