@@ -1,0 +1,345 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #eef2ff;
+}
+
+
+.login-page {
+    min-height: 100vh;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 30%), radial-gradient(circle at bottom right, rgba(79, 70, 229, 0.2), transparent 28%), linear-gradient(135deg, #e0ecff, #eef2ff, #f8fbff);
+}
+
+
+
+.login-shell {
+    width: 100%;
+    max-width: 1120px;
+    min-height: 520px;
+    max-height: 92vh;
+    display: flex;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(15, 23, 42, 0.15);
+    backdrop-filter: blur(14px);
+}
+
+
+
+
+.login-left {
+    flex: 1;
+    padding: 32px 28px;
+    color: #ffffff;
+    background: linear-gradient(160deg, #b91c1c, #dc2626 55%, #f87171);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.login-right {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 22px;
+    overflow-y: auto;
+}
+
+
+
+.school-logo {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+.login-left h1 {
+    margin: 0 0 14px;
+    font-size: 2.1rem;
+    line-height: 1.2;
+}
+
+.brand-text {
+    margin: 0;
+    max-width: 420px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.motto-box {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 12px 18px;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    width: fit-content;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 28px 0 0;
+}
+
+    .feature-list li {
+        margin-bottom: 14px;
+        padding-left: 26px;
+        position: relative;
+        color: rgba(255, 255, 255, 0.94);
+    }
+
+        .feature-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+.login-right {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 42px 28px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 14px 6px;
+}
+
+.welcome-tag {
+    margin: 0 0 10px;
+    color: #4f46e5;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.login-card h2 {
+    margin: 0 0 8px;
+    font-size: 2rem;
+    color: #111827;
+}
+
+.login-subtext {
+    margin: 0 0 24px;
+    color: #6b7280;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #374151;
+    }
+
+.login-input {
+    width: 100%;
+    height: 50px;
+    padding: 0 16px;
+    border: 1px solid #dbe3f0;
+    border-radius: 14px;
+    outline: none;
+    font-size: 15px;
+    background: #fff;
+    transition: all 0.2s ease;
+}
+
+    .login-input:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
+    }
+
+.captcha-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.captcha-box {
+    min-width: 130px;
+    height: 48px;
+    padding: 0 18px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #eef2ff, #dbeafe);
+    border: 1px dashed #4f46e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #1e3a8a;
+}
+
+.refresh-btn {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 14px;
+    background: #eef2ff;
+    color: #4f46e5;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+    .refresh-btn:hover {
+        background: #dde7ff;
+        transform: rotate(20deg);
+    }
+
+.login-actions {
+    margin-top: 26px;
+}
+
+.login-btn {
+    width: 100%;
+    height: 52px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+    box-shadow: 0 12px 24px rgba(79, 70, 229, 0.22);
+}
+
+    .login-btn:hover {
+        transform: translateY(-1px);
+        opacity: 0.97;
+    }
+
+.forgot-link {
+    display: inline-block;
+    margin-top: 14px;
+    text-decoration: none;
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+.error-box {
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    font-size: 14px;
+}
+
+.contact-text {
+    margin-top: 18px;
+    color: #6b7280;
+    text-align: center;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .login-shell {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .login-left,
+    .login-right {
+        width: 100%;
+    }
+
+    .login-left {
+        padding: 34px 24px;
+    }
+
+    .login-right {
+        padding: 28px 20px;
+    }
+
+    .login-left h1 {
+        font-size: 1.7rem;
+    }
+
+    .login-card h2 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .login-page {
+        padding: 12px;
+    }
+
+    .captcha-row {
+        flex-wrap: wrap;
+    }
+
+    .captcha-box {
+        width: 100%;
+    }
+
+    .refresh-btn {
+        width: 100%;
+    }
+}
+.password-wrapper {
+    position: relative;
+}
+
+.password-input {
+    padding-right: 52px;
+}
+
+.toggle-password-btn {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    color: #b91c1c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: 0.2s ease;
+}
+
+    .toggle-password-btn:hover {
+        background: rgba(185, 28, 28, 0.08);
+    }
+
+    .toggle-password-btn svg {
+        pointer-events: none;
+    }
+
