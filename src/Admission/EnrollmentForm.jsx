@@ -145,15 +145,10 @@ const EnrollmentForm = ({ setActivePage, studentId }) => {
         } catch (error) {
             console.error(error);
 
+            const errorMessage = error.response?.data?.message || "Enrollment failed";
             setNotification({
-    
-                const errorMessage =
-                    error.response?.data?.message || "Enrollment failed";
-
-                setNotification({
-                    type: "error",
-                    message: errorMessage
-                });
+                type: "error",
+                message: errorMessage
             });
         } finally {
             setLoading(false);
