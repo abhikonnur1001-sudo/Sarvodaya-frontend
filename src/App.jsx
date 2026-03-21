@@ -3,9 +3,9 @@ import Login from "./auth/Login";
 import { isLoggedIn, getRole, logout } from "./auth/authService";
 
 
-import AdminDashboard from "./dashboards/AdminDashboard";
-import HeadMasterDashboard from "./dashboards/HeadMasterDashboard";
-import AccountsDashboard from "./dashboards/AccountsDashboard";
+import AdminDashboard from "./Dashboards/AdminDashboard";
+import HeadMasterDashboard from "./Dashboards/HeadMasterDashboard";
+import AccountsDashboard from "./Dashboards/AccountsDashboard";
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(isLoggedIn());
