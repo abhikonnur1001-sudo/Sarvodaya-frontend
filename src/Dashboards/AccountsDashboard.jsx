@@ -1,91 +1,153 @@
-import React from "react";
-import "./AccountsDashboard.css";
+import React, { useState } from "react";
+import "./AdminDashboard.css"; // SAME CSS
 
-const AccountantDashboard = () => {
+// 👉 You will replace these with your real components
+import CollectFee from "./CollectFee";
+import Reports from "./Reports";
+
+const AccountantDashboard = ({ onLogout }) => {
+    const [activePage, setActivePage] = useState("dashboard");
+
     return (
-        <div className="ac-dashboard">
+        <div className="dashboard-container">
 
-            {/* 🔷 KPI CARDS */}
-            <div className="ac-kpi-row">
-                <div className="ac-card">💰 Today Collection <h2>₹1,25,000</h2></div>
-                <div className="ac-card">📅 Monthly Collection <h2>₹18,40,000</h2></div>
-                <div className="ac-card">⚠ Pending Fees <h2>235</h2></div>
-                <div className="ac-card">✅ Authenticated Today <h2>42</h2></div>
-            </div>
+            {/* HEADER (Same as Admin) */}
+            <div className="dashboard-header">
 
-            {/* 🔷 MAIN GRID */}
-            <div className="ac-main-grid">
+                <div className="header-left">
+                    <img src="/logo.png" alt="Logo" className="header-logo" />
 
-                {/* LEFT SIDE */}
-                <div className="ac-left">
-
-                    {/* Pending Admissions */}
-                    <div className="ac-section">
-                        <h3>📥 Pending Admissions (HM Approved)</h3>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Class</th>
-                                    <th>School</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Ravi Kumar</td>
-                                    <td>5</td>
-                                    <td>English School</td>
-                                    <td><button className="btn-primary">Collect Fee</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div className="header-title">
+                        <h1>SARVODAYA GROUP OF INSTITUTIONS</h1>
+                        <div className="header-subtitle">Accountant</div>
                     </div>
-
-                    {/* Fee Collection */}
-                    <div className="ac-section">
-                        <h3>💳 Fee Collection</h3>
-
-                        <input placeholder="Search Student..." className="ac-input" />
-
-                        <div className="ac-fee-box">
-                            <p>Total Fee: ₹25,000</p>
-                            <p>Paid: ₹10,000</p>
-                            <p>Balance: ₹15,000</p>
-                        </div>
-
-                        <button className="btn-primary">Collect Payment</button>
-                        <button className="btn-secondary">Generate Receipt</button>
-                    </div>
-
                 </div>
 
-                {/* RIGHT SIDE */}
-                <div className="ac-right">
-
-                    {/* Alerts */}
-                    <div className="ac-section">
-                        <h3>⚠ Alerts</h3>
-                        <ul>
-                            <li>120 students pending fee</li>
-                            <li>15 stock approvals pending</li>
-                            <li>8 TC clearance pending</li>
-                        </ul>
+                <div className="header-right">
+                    <div className="header-profile">
+                        <img src="/profile.jpg" alt="Profile" className="profile-img" />
+                        <div>Accountant</div>
                     </div>
 
-                    {/* Stock Eligibility */}
-                    <div className="ac-section">
-                        <h3>📦 Stock Eligibility</h3>
-                        <p>Ravi → ✅ Books Allowed</p>
-                        <p>Ajay → ❌ Not Eligible</p>
-                    </div>
+                    <button className="logout-btn" onClick={onLogout}>
+                        Logout
+                    </button>
+                </div>
 
-                    {/* TC Clearance */}
-                    <div className="ac-section">
-                        <h3>📄 TC Clearance</h3>
-                        <p>Check dues before issuing TC</p>
-                        <button className="btn-primary">Approve Clearance</button>
+            </div>
+
+            <div className="dashboard-main">
+
+                {/* SIDEBAR (Same Structure) */}
+                <div className="dashboard-sidebar">
+
+                    <div className="sidebar-menu">
+
+                        {/* FEES */}
+                        <div className="menu-dropdown">
+                            <button className="menu-btn">
+                                Fee Management
+                            </button>
+
+                            <div className="dropdown-content">
+                                <button onClick={() => setActivePage("collectFee")}>
+                                    Collect Fee
+                                </button>
+
+                                <button onClick={() => setActivePage("feeReports")}>
+                                    Fee Reports
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* STUDENTS */}
+                        <div className="menu-dropdown">
+                            <button className="menu-btn">
+                                Students
+                            </button>
+
+                            <div className="dropdown-content">
+                                <button onClick={() => setActivePage("viewStudents")}>
+                                    View Students
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* REPORTS */}
+                        <div className="menu-dropdown">
+                            <button className="menu-btn">
+                                Reports
+                            </button>
+
+                            <div className="dropdown-content">
+                                <button onClick={() => setActivePage("dailyReport")}>
+                                    Daily Report
+                                </button>
+
+                                <button onClick={() => setActivePage("monthlyReport")}>
+                                    Monthly Report
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* SIMPLE BUTTON */}
+                        <button className="sidebar-item">
+                            Notifications
+                        </button>
+
                     </div>
+                </div>
+
+                {/* CONTENT (Same Logic) */}
+                <div className="dashboard-content">
+
+                    {activePage === "dashboard" && (
+                        <>
+                            <div className="stats-row">
+
+                                <div className="stat-card">
+                                    <div className="stat-label">Total Fees</div>
+                                    <div className="stat-value">₹10,00,000</div>
+                                </div>
+
+                                <div className="stat-card">
+                                    <div className="stat-label">Today Collection</div>
+                                    <div className="stat-value">₹25,000</div>
+                                </div>
+
+                                <div className="stat-card">
+                                    <div className="stat-label">Pending Fees</div>
+                                    <div className="stat-value">₹2,00,000</div>
+                                </div>
+
+                                <div className="stat-card">
+                                    <div className="stat-label">Transactions</div>
+                                    <div className="stat-value">120</div>
+                                </div>
+
+                            </div>
+                        </>
+                    )}
+
+                    {activePage === "collectFee" && (
+                        <CollectFee goBack={() => setActivePage("dashboard")} />
+                    )}
+
+                    {activePage === "feeReports" && (
+                        <Reports goBack={() => setActivePage("dashboard")} />
+                    )}
+
+                    {activePage === "viewStudents" && (
+                        <div>Student List Page</div>
+                    )}
+
+                    {activePage === "dailyReport" && (
+                        <div>Daily Report Page</div>
+                    )}
+
+                    {activePage === "monthlyReport" && (
+                        <div>Monthly Report Page</div>
+                    )}
 
                 </div>
 
