@@ -1,0 +1,409 @@
+.ose-container {
+    padding: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.ose-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+    gap: 1rem;
+}
+
+.ose-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+}
+
+.ose-subtitle {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin-top: 3px;
+}
+
+.ose-back-btn {
+    background: none;
+    border: 1px solid #d1d5db;
+    color: #374151;
+    padding: 0.45rem 1rem;
+    border-radius: 7px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+    .ose-back-btn:hover {
+        background: #f3f4f6;
+    }
+
+.ose-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.ose-card-warn {
+    border-color: #fca5a5;
+}
+
+.ose-card-ok {
+    border-color: #86efac;
+}
+
+.ose-card-success {
+    border-color: #86efac;
+}
+
+.ose-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    background: #f8fafc;
+    gap: 0.5rem;
+}
+
+.ose-card-warn .ose-card-header {
+    background: #fff7ed;
+    border-bottom-color: #fed7aa;
+}
+
+.ose-card-ok .ose-card-header {
+    background: #f0fdf4;
+    border-bottom-color: #bbf7d0;
+}
+
+.ose-card-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.ose-card-body {
+    padding: 1rem;
+}
+
+.ose-search-row {
+    display: flex;
+    gap: 0.65rem;
+}
+
+.ose-search-input {
+    flex: 1;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 0.9rem;
+    font-family: inherit;
+}
+
+    .ose-search-input:focus {
+        outline: none;
+        border-color: #01696f;
+    }
+
+.ose-search-btn {
+    padding: 0.55rem 1.25rem;
+    background: #01696f;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+    .ose-search-btn:hover:not(:disabled) {
+        background: #0c4e54;
+    }
+
+    .ose-search-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+.ose-error {
+    margin-top: 0.65rem;
+    font-size: 0.83rem;
+    color: #b91c1c;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+}
+
+.ose-enroll-no {
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    color: #01696f;
+    background: #f0fdf4;
+    padding: 3px 10px;
+    border-radius: 6px;
+    border: 1px solid #bbf7d0;
+}
+
+.ose-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+.ose-detail-pair {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 10px;
+    border-bottom: 1px solid #f1f5f9;
+    border-right: 1px solid #f1f5f9;
+    font-size: 13px;
+}
+
+    .ose-detail-pair:nth-child(even) {
+        border-right: none;
+    }
+
+.ose-dk {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #94a3b8;
+    margin-bottom: 2px;
+}
+
+.ose-dv {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.ose-highlight {
+    color: #01696f;
+    font-weight: 700;
+}
+
+.ose-overdue-badge {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #b91c1c;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    padding: 3px 10px;
+    border-radius: 999px;
+}
+
+.ose-overdue-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    padding: 0.35rem 0;
+    color: #374151;
+}
+
+.ose-overdue-divider {
+    border-top: 1px dashed #e2e8f0;
+    margin: 0.35rem 0;
+}
+
+.ose-overdue-total {
+    font-weight: 700;
+}
+
+.ose-paid {
+    color: #15803d;
+    font-weight: 600;
+}
+
+.ose-due {
+    color: #b91c1c;
+    font-weight: 700;
+}
+
+.ose-year-badge {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #01696f;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 3px 10px;
+    border-radius: 999px;
+}
+
+.ose-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ose-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+    .ose-field label {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: #374151;
+    }
+
+.req {
+    color: #b91c1c;
+}
+
+.ose-field select {
+    padding: 0.55rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 0.875rem;
+    font-family: inherit;
+    background: #fff;
+    cursor: pointer;
+}
+
+    .ose-field select:focus {
+        outline: none;
+        border-color: #01696f;
+    }
+
+.ose-fee-preview {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.ose-fee-preview-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #475569;
+    margin-bottom: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ose-fee-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    padding: 0.3rem 0;
+    color: #374151;
+}
+
+.ose-fee-overdue {
+    color: #b91c1c;
+    font-weight: 600;
+}
+
+.ose-fee-divider {
+    border-top: 1px solid #e2e8f0;
+    margin: 0.4rem 0;
+}
+
+.ose-fee-total {
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: #0f172a;
+}
+
+.ose-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    margin-top: 0.75rem;
+}
+
+.ose-enroll-btn {
+    padding: 0.6rem 1.4rem;
+    background: #01696f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+    .ose-enroll-btn:hover:not(:disabled) {
+        background: #0c4e54;
+    }
+
+    .ose-enroll-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+.ose-cancel-btn {
+    padding: 0.6rem 1.1rem;
+    background: #fff;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+    .ose-cancel-btn:hover {
+        background: #f3f4f6;
+    }
+
+.ose-success-body {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+}
+
+.ose-success-icon {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+}
+
+.ose-success-body h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #15803d;
+    margin-bottom: 0.5rem;
+}
+
+.ose-success-body p {
+    font-size: 0.9rem;
+    color: #374151;
+    margin-bottom: 0.4rem;
+}
+
+.ose-success-note {
+    font-size: 0.82rem;
+    color: #64748b;
+}
+
+.ose-success-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .ose-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ose-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ose-detail-pair:nth-child(even) {
+        border-right: 1px solid #f1f5f9;
+    }
+}

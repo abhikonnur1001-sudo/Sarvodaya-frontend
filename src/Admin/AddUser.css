@@ -1,0 +1,297 @@
+/* ── Container ── */
+.au-container {
+    padding: 2rem 2.5rem;
+    max-width: 780px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ── Page Header ── */
+.au-page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.75rem;
+}
+
+.au-page-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0 0 0.25rem;
+}
+
+.au-page-subtitle {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+.au-back-btn {
+    padding: 0.5rem 1rem;
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+
+    .au-back-btn:hover {
+        background: #e5e7eb;
+    }
+
+/* ── Notification ── */
+.au-notification {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+    .au-notification.success {
+        background: #ecfdf5;
+        color: #065f46;
+        border: 1px solid #a7f3d0;
+    }
+
+    .au-notification.error {
+        background: #fef2f2;
+        color: #991b1b;
+        border: 1px solid #fecaca;
+    }
+
+/* ── Card ── */
+.au-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    overflow: hidden;
+}
+
+/* ── Form ── */
+.au-form {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* ── Section Label ── */
+.au-section-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f3f4f6;
+    margin-top: 0.25rem;
+}
+
+/* ── Form Row ── */
+.au-form-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ── Field ── */
+.au-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex: 1;
+    min-width: 160px;
+}
+
+.au-field-wide {
+    flex: 2;
+    min-width: 220px;
+}
+
+.au-field-full {
+    flex: 1 1 100%;
+}
+
+.au-field label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #374151;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.au-field input,
+.au-field select,
+.au-field textarea {
+    padding: 0.55rem 0.85rem;
+    border: 1.5px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #111827;
+    background: #fff;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.18s, box-shadow 0.18s;
+    resize: vertical;
+}
+
+    .au-field input:focus,
+    .au-field select:focus,
+    .au-field textarea:focus {
+        border-color: #c0392b;
+        box-shadow: 0 0 0 3px rgba(192,57,43,0.12);
+    }
+
+.req {
+    color: #ef4444;
+}
+
+/* ── Password Wrapper ── */
+.au-password-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+    .au-password-wrap input {
+        width: 100%;
+        padding-right: 2.75rem;
+    }
+
+.au-toggle-pw {
+    position: absolute;
+    right: 0.6rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0;
+    line-height: 1;
+}
+
+/* ── Role Grid ── */
+.au-role-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+}
+
+@media (max-width: 600px) {
+    .au-role-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.au-role-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 1rem 0.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #fafafa;
+    transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+    user-select: none;
+}
+
+    .au-role-card input[type="radio"] {
+        display: none;
+    }
+
+    .au-role-card:hover {
+        border-color: #c0392b;
+        background: #fff5f5;
+    }
+
+    .au-role-card.selected {
+        border-color: #c0392b;
+        background: #fff1f0;
+        box-shadow: 0 0 0 3px rgba(192,57,43,0.12);
+    }
+
+.au-role-icon {
+    font-size: 1.5rem;
+}
+
+.au-role-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #374151;
+    text-align: center;
+}
+
+.au-role-card.selected .au-role-label {
+    color: #c0392b;
+}
+
+/* ── Form Actions ── */
+.au-form-actions {
+    display: flex;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #f3f4f6;
+}
+
+.au-submit-btn {
+    padding: 0.65rem 1.75rem;
+    background: #c0392b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.18s;
+}
+
+    .au-submit-btn:hover {
+        background: #a93226;
+    }
+
+    .au-submit-btn:disabled {
+        background: #d1d5db;
+        cursor: not-allowed;
+    }
+
+.au-reset-btn {
+    padding: 0.65rem 1.25rem;
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+    .au-reset-btn:hover {
+        background: #e5e7eb;
+    }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    .au-container {
+        padding: 1rem;
+    }
+
+    .au-form-row {
+        flex-direction: column;
+    }
+
+    .au-form-actions {
+        flex-direction: column;
+    }
+
+    .au-submit-btn, .au-reset-btn {
+        width: 100%;
+    }
+}

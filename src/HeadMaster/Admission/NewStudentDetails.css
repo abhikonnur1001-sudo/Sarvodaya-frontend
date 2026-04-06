@@ -1,0 +1,657 @@
+/* ─────────────────────────────────────────────
+   NewStudentDetails.css  —  Sarvodaya ERP
+   ───────────────────────────────────────────── */
+
+.nsd-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px 24px;
+    background: #f7f6f2;
+    box-sizing: border-box;
+    gap: 12px;
+}
+
+.nsd-header {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.nsd-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #28251d;
+    margin: 0 0 2px;
+    line-height: 1.2;
+}
+
+.nsd-breadcrumb {
+    font-size: 12px;
+    color: #7a7974;
+    margin: 0;
+}
+
+    .nsd-breadcrumb span {
+        color: #28251d;
+        font-weight: 500;
+    }
+
+.nsd-stepper {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #d4d1ca;
+    border-radius: 10px;
+    padding: 12px 16px;
+    overflow-x: auto;
+}
+
+    .nsd-stepper::-webkit-scrollbar {
+        height: 3px;
+    }
+
+    .nsd-stepper::-webkit-scrollbar-thumb {
+        background: #d4d1ca;
+        border-radius: 99px;
+    }
+
+.nsd-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 2px 4px;
+    border-radius: 6px;
+    transition: background 150ms;
+}
+
+    .nsd-step:hover {
+        background: #f7f6f2;
+    }
+
+.nsd-step__circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    background: #f0ede8;
+    color: #7a7974;
+    border: 1.5px solid #d4d1ca;
+    transition: background 200ms, color 200ms, border-color 200ms;
+}
+
+    .nsd-step__circle svg {
+        width: 13px;
+        height: 13px;
+    }
+
+.nsd-step__label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #7a7974;
+    white-space: nowrap;
+    transition: color 200ms;
+}
+
+.nsd-step--active .nsd-step__circle {
+    background: #01696f;
+    color: #fff;
+    border-color: #01696f;
+}
+
+.nsd-step--active .nsd-step__label {
+    color: #01696f;
+    font-weight: 600;
+}
+
+.nsd-step--done .nsd-step__circle {
+    background: #d4dfcc;
+    color: #437a22;
+    border-color: #437a22;
+}
+
+.nsd-step--done .nsd-step__label {
+    color: #437a22;
+}
+
+.nsd-step__line {
+    flex: 1;
+    min-width: 20px;
+    height: 1.5px;
+    background: #dcd9d5;
+    margin: 0 4px;
+    transition: background 200ms;
+}
+
+.nsd-step__line--done {
+    background: #437a22;
+}
+
+.nsd-notification {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.nsd-notification__icon {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.nsd-notification--success {
+    background: #d4dfcc;
+    color: #2e5c10;
+    border: 1px solid #437a22;
+}
+
+.nsd-notification--warning {
+    background: #e7d7c4;
+    color: #713417;
+    border: 1px solid #964219;
+}
+
+.nsd-notification--error {
+    background: #e0ced7;
+    color: #7d1e5e;
+    border: 1px solid #a12c7b;
+}
+
+.nsd-form {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-right: 4px;
+}
+
+    .nsd-form::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .nsd-form::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .nsd-form::-webkit-scrollbar-thumb {
+        background: #d4d1ca;
+        border-radius: 99px;
+    }
+
+.nsd-card {
+    background: #ffffff;
+    border: 1px solid #d4d1ca;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.nsd-card__head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #28251d;
+    border-bottom: 1px solid #dcd9d5;
+    background: #f9f8f5;
+}
+
+.nsd-card__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.nsd-card__body {
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nsd-parent-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.nsd-photo-box {
+    flex-shrink: 0;
+    width: 90px;
+    height: 108px;
+    border-radius: 8px;
+    border: 1px dashed #d4d1ca;
+    background: #f0ede8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: background 150ms, border-color 150ms;
+    overflow: hidden;
+}
+
+    .nsd-photo-box:hover {
+        background: #e6e4df;
+        border-color: #01696f;
+    }
+
+    .nsd-photo-box svg {
+        width: 28px;
+        height: 28px;
+        color: #bab9b4;
+    }
+
+    .nsd-photo-box span {
+        font-size: 10px;
+        color: #7a7974;
+        text-align: center;
+        padding: 0 6px;
+    }
+
+    .nsd-photo-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.nsd-fields {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+.nsd-row-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.nsd-row-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.nsd-row-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.nsd-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+    .nsd-field label {
+        font-size: 12px;
+        font-weight: 500;
+        color: #7a7974;
+    }
+
+        .nsd-field label em {
+            color: #a12c7b;
+            font-style: normal;
+            margin-left: 2px;
+        }
+
+    .nsd-field input,
+    .nsd-field select {
+        padding: 7px 10px;
+        font-size: 13px;
+        font-family: inherit;
+        color: #28251d;
+        background: #f7f6f2;
+        border: 1px solid #d4d1ca;
+        border-radius: 6px;
+        outline: none;
+        transition: border-color 180ms, box-shadow 180ms, background 180ms;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+        .nsd-field input::placeholder {
+            color: #bab9b4;
+        }
+
+        .nsd-field input:focus, .nsd-field select:focus {
+            border-color: #01696f;
+            box-shadow: 0 0 0 3px rgba(1,105,111,0.12);
+            background: #ffffff;
+        }
+
+.nsd-error {
+    font-size: 11px;
+    color: #a12c7b;
+    font-weight: 500;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+    .nsd-error::before {
+        content: "⚠";
+        font-size: 10px;
+    }
+
+.nsd-input--error {
+    border-color: #a12c7b !important;
+    background: #fdf5fa !important;
+}
+
+    .nsd-input--error:focus {
+        box-shadow: 0 0 0 3px rgba(161,44,123,0.12) !important;
+    }
+
+.nsd-checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+}
+
+    .nsd-checkbox-row input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        accent-color: #01696f;
+        cursor: pointer;
+    }
+
+    .nsd-checkbox-row label {
+        font-size: 13px;
+        font-weight: 500;
+        color: #28251d;
+        cursor: pointer;
+    }
+
+.nsd-actions {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 0 6px;
+    gap: 10px;
+}
+
+.nsd-actions__right {
+    display: flex;
+    gap: 8px;
+}
+
+.nsd-btn {
+    padding: 7px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 180ms, opacity 180ms, transform 180ms;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+    .nsd-btn:active {
+        transform: scale(0.985);
+    }
+
+    .nsd-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+.nsd-btn--ghost {
+    background: #fff;
+    color: #7a7974;
+    border: 1px solid #d4d1ca;
+}
+
+    .nsd-btn--ghost:hover {
+        background: #f0ede8;
+    }
+
+.nsd-btn--primary {
+    background: #01696f;
+    color: #fff;
+}
+
+    .nsd-btn--primary:hover {
+        background: #0c4e54;
+    }
+
+.nsd-btn--teal {
+    background: #0f3638;
+    color: #fff;
+}
+
+    .nsd-btn--teal:hover {
+        background: #01696f;
+    }
+
+/* ── PHOTO PICKER ── */
+.nsd-picker-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 999;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    animation: nsd-fade-in 150ms ease;
+}
+
+@keyframes nsd-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.nsd-picker {
+    background: #ffffff;
+    border-radius: 14px 14px 0 0;
+    padding: 20px 16px 32px;
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: nsd-slide-up 220ms cubic-bezier(0.16,1,0.3,1);
+}
+
+@keyframes nsd-slide-up {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.nsd-picker__title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #7a7974;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.nsd-picker__btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: #f7f6f2;
+    border: 1px solid #d4d1ca;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #28251d;
+    cursor: pointer;
+    transition: background 150ms, border-color 150ms;
+    font-family: inherit;
+    text-align: left;
+}
+
+    .nsd-picker__btn:hover {
+        background: #ede9e4;
+        border-color: #01696f;
+    }
+
+    .nsd-picker__btn svg {
+        width: 22px;
+        height: 22px;
+        color: #01696f;
+        flex-shrink: 0;
+    }
+
+.nsd-picker__cancel {
+    padding: 12px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #a12c7b;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: inherit;
+    transition: background 150ms;
+    margin-top: 2px;
+    text-align: center;
+}
+
+    .nsd-picker__cancel:hover {
+        background: #f0ede8;
+    }
+
+/* ── WEBCAM POPUP ── */
+.nsd-webcam {
+    background: #ffffff;
+    border-radius: 14px 14px 0 0;
+    padding: 20px 16px 32px;
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    animation: nsd-slide-up 220ms cubic-bezier(0.16,1,0.3,1);
+}
+
+.nsd-webcam__viewport {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nsd-webcam__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scaleX(-1);
+}
+
+.nsd-webcam__actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+    .nsd-webcam__actions .nsd-btn {
+        min-width: 120px;
+        justify-content: center;
+    }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+    .nsd-row-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nsd-container {
+        padding: 14px;
+    }
+
+    .nsd-parent-row {
+        flex-direction: column;
+    }
+
+    .nsd-photo-box {
+        width: 100%;
+        height: 64px;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .nsd-row-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .nsd-row-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .nsd-step__label {
+        display: none;
+    }
+
+    .nsd-row-3, .nsd-row-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .nsd-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nsd-actions__right {
+        flex-direction: column;
+    }
+
+    .nsd-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

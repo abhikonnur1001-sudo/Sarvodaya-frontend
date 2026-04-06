@@ -1,39 +1,62 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 import Login from "./auth/Login";
-import { isLoggedIn, getRole, logout } from "./auth/authService";
+import { isLoggedIn, logout } from "./auth/authService";
+import { exitFullscreen } from "./utils/fullscreen";
 
+import AdminDashboard from "./Admin/AdminDashboard";
+import HeadMasterDashboard from "./HeadMaster/HeadMasterDashboard";
+import AccountsDashboard from "./Accountant/AccountsDashboard";
 
-import AdminDashboard from "./Dashboards/AdminDashboard";
-import HeadMasterDashboard from "./Dashboards/HeadMasterDashboard";
-import AccountsDashboard from "./Dashboards/AccountsDashboard";
-
+// 🔒 Protected Route
+const ProtectedRoute = ({ children }) => {
+    return isLoggedIn() ? children : <Navigate to="/login" />;
+};
+const handleLogout = async () => {
+    await exitFullscreen();
+    logout();
+};
 function App() {
-    const [loggedIn, setLoggedIn] = useState(isLoggedIn());
-    const [role, setRole] = useState(getRole());
-
-    if (!loggedIn) {
-        return (
-            <Login
-                onLogin={(r) => {
-                    setRole(r);
-                    setLoggedIn(true);
-                }}
-            />
-        );
-    }
-
-    const onLogout = () => {
-        logout();
-        setLoggedIn(false);
-        setRole(null);
-    };
-
     return (
-        <>
-            {role === "Administrator" && <AdminDashboard onLogout={onLogout} />}
-            {role === "HeadMaster" && <HeadMasterDashboard onLogout={onLogout} />}
-            {role === "Accounts" && <AccountsDashboard onLogout={onLogout} />}
-        </>
+        <BrowserRouter>
+            <Routes>
+
+                {/* LOGIN */}
+                <Route path="/login" element={<Login />} />
+
+                {/* DASHBOARDS */}
+                <Route
+                    path="/administrator"
+                    element={
+                        <ProtectedRoute>
+                            <AdminDashboard onLogout={handleLogout} />
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route
+                    path="/headmaster"
+                    element={
+                        <ProtectedRoute>
+                            <HeadMasterDashboard onLogout={handleLogout} />
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route
+                    path="/accounts"
+                    element={
+                        <ProtectedRoute>
+                            <AccountsDashboard onLogout={handleLogout} />
+                        </ProtectedRoute>
+                    }
+                />
+
+                {/* DEFAULT */}
+                <Route path="*" element={<Navigate to="/login" />} />
+
+            </Routes>
+        </BrowserRouter>
     );
 }
 

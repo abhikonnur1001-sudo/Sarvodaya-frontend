@@ -1,0 +1,396 @@
+/* ── Container ── */
+.sm-container {
+    padding: 2rem 2.5rem;
+    max-width: 1100px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ── Page Header ── */
+.sm-page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.75rem;
+}
+
+.sm-page-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0 0 0.25rem;
+}
+
+.sm-page-subtitle {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+.sm-back-btn {
+    padding: 0.5rem 1rem;
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+    .sm-back-btn:hover {
+        background: #e5e7eb;
+    }
+
+/* ── Notification ── */
+.sm-notification {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+    .sm-notification.success {
+        background: #ecfdf5;
+        color: #065f46;
+        border: 1px solid #a7f3d0;
+    }
+
+    .sm-notification.error {
+        background: #fef2f2;
+        color: #991b1b;
+        border: 1px solid #fecaca;
+    }
+
+/* ── Two-column grid ── */
+.sm-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+@media (max-width: 860px) {
+    .sm-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.sm-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sm-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ── Card ── */
+.sm-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    overflow: hidden;
+}
+
+.sm-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+    background: #fafafa;
+}
+
+.sm-card-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.sm-badge {
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid #bfdbfe;
+}
+
+/* ── Form ── */
+.sm-form {
+    padding: 1.25rem 1.5rem;
+}
+
+.sm-form-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.sm-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex: 1;
+    min-width: 140px;
+}
+
+.sm-field-btn {
+    flex: 0 0 auto;
+}
+
+.sm-field label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #374151;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.sm-field input,
+.sm-field select {
+    padding: 0.55rem 0.85rem;
+    border: 1.5px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #111827;
+    background: #fff;
+    transition: border-color 0.18s, box-shadow 0.18s;
+    outline: none;
+}
+
+    .sm-field input:focus,
+    .sm-field select:focus {
+        border-color: #c0392b;
+        box-shadow: 0 0 0 3px rgba(192,57,43,0.12);
+    }
+
+.sm-field small {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.req {
+    color: #ef4444;
+}
+
+/* ── Add Button ── */
+.sm-add-btn {
+    padding: 0.6rem 1.4rem;
+    background: #c0392b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s;
+    white-space: nowrap;
+}
+
+    .sm-add-btn:hover {
+        background: #a93226;
+    }
+
+    .sm-add-btn:disabled {
+        background: #d1d5db;
+        cursor: not-allowed;
+    }
+
+/* ── Table ── */
+.sm-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+}
+
+    .sm-table thead tr {
+        background: #f9fafb;
+        border-bottom: 2px solid #e5e7eb;
+    }
+
+    .sm-table th {
+        padding: 0.75rem 1.25rem;
+        text-align: left;
+        font-size: 0.73rem;
+        font-weight: 700;
+        color: #6b7280;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .sm-table tbody tr {
+        border-bottom: 1px solid #f3f4f6;
+        transition: background 0.15s;
+    }
+
+        .sm-table tbody tr:hover {
+            background: #fafafa;
+        }
+
+    .sm-table td {
+        padding: 0.85rem 1.25rem;
+        color: #374151;
+        vertical-align: middle;
+    }
+
+.sm-index {
+    color: #9ca3af;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.sm-code-badge {
+    display: inline-block;
+    background: #fef3c7;
+    color: #92400e;
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+    border: 1px solid #fde68a;
+}
+
+.sm-school-name {
+    color: #374151;
+    font-size: 0.88rem;
+}
+
+/* ── Inline Edit ── */
+.sm-inline-input {
+    padding: 0.38rem 0.6rem;
+    border: 1.5px solid #c0392b;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    outline: none;
+    width: 80px;
+    box-shadow: 0 0 0 3px rgba(192,57,43,0.1);
+}
+
+.sm-inline-wide {
+    width: 160px;
+}
+
+/* ── Action Buttons ── */
+.sm-action-cell {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.sm-edit-btn {
+    padding: 0.35rem 0.75rem;
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .sm-edit-btn:hover {
+        background: #dbeafe;
+    }
+
+.sm-save-btn {
+    padding: 0.35rem 0.7rem;
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .sm-save-btn:hover {
+        background: #d1fae5;
+    }
+
+.sm-cancel-btn {
+    padding: 0.35rem 0.6rem;
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .sm-cancel-btn:hover {
+        background: #fee2e2;
+    }
+
+/* ── Empty ── */
+.sm-empty {
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+/* ── Assign HM Panel ── */
+.sm-assign-body {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sm-assign-hint {
+    font-size: 0.82rem;
+    color: #6b7280;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 0.65rem 0.85rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.sm-assign-btn {
+    padding: 0.65rem 1.25rem;
+    background: #1d4ed8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s;
+    margin-top: 0.25rem;
+}
+
+    .sm-assign-btn:hover {
+        background: #1e40af;
+    }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    .sm-container {
+        padding: 1rem;
+    }
+
+    .sm-form-row {
+        flex-direction: column;
+    }
+
+    .sm-field-btn {
+        width: 100%;
+    }
+
+    .sm-add-btn {
+        width: 100%;
+    }
+}

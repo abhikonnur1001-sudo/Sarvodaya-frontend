@@ -1,0 +1,355 @@
+.uaf-container {
+    padding: 24px;
+    font-family: inherit;
+}
+
+.uaf-header {
+    margin-bottom: 20px;
+}
+
+.uaf-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 4px;
+}
+
+.uaf-subtitle {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.uaf-notification {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+    .uaf-notification.success {
+        background: #f0fdf4;
+        color: #166534;
+        border: 1px solid #bbf7d0;
+    }
+
+    .uaf-notification.error {
+        background: #fef2f2;
+        color: #991b1b;
+        border: 1px solid #fecaca;
+    }
+
+/* Filters */
+.uaf-filters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.uaf-search {
+    flex: 1 1 260px;
+    padding: 9px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border 0.2s;
+}
+
+    .uaf-search:focus {
+        border-color: #6366f1;
+    }
+
+.uaf-select {
+    padding: 9px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    background: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Table */
+.uaf-table-wrap {
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    background: #fff;
+}
+
+.uaf-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+    .uaf-table thead tr {
+        background: #f8fafc;
+        border-bottom: 2px solid #e2e8f0;
+    }
+
+    .uaf-table th {
+        padding: 12px 16px;
+        text-align: left;
+        font-weight: 600;
+        color: #475569;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+
+    .uaf-table td {
+        padding: 12px 16px;
+        color: #334155;
+    }
+
+.uaf-row {
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.15s;
+}
+
+    .uaf-row:hover {
+        background: #f8fafc;
+    }
+
+.uaf-row-active {
+    background: #eef2ff !important;
+}
+
+.uaf-action-cell {
+    white-space: nowrap;
+}
+
+/* Enrollment badge */
+.uaf-enroll-badge {
+    background: #e0e7ff;
+    color: #4338ca;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+}
+
+/* ── Action Buttons ── */
+.uaf-btn {
+    padding: 6px 16px;
+    border: none;
+    border-radius: 7px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.18s, transform 0.1s;
+}
+
+    .uaf-btn:active {
+        transform: scale(0.97);
+    }
+
+/* 🎯 Assign Fee — green, shown when NO fees assigned */
+.uaf-btn-assign {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+    .uaf-btn-assign:hover {
+        background: #bbf7d0;
+    }
+
+/* ➕ Add Fee — blue, shown when fees already assigned */
+.uaf-btn-addfee {
+    background: #dbeafe;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+}
+
+    .uaf-btn-addfee:hover {
+        background: #bfdbfe;
+    }
+
+/* ▲ Close */
+.uaf-btn-close {
+    background: #f1f5f9;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+}
+
+    .uaf-btn-close:hover {
+        background: #e2e8f0;
+    }
+
+/* Count badge inside Add Fee button */
+.uaf-count-badge {
+    background: #1d4ed8;
+    color: #fff;
+    font-size: 0.72rem;
+    padding: 1px 7px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+/* ── Inline Fee Panel ── */
+.uaf-panel-row td {
+    padding: 0 !important;
+    border-bottom: 2px solid #6366f1;
+}
+
+.uaf-panel {
+    background: #f8faff;
+    padding: 20px 24px;
+    border-top: 2px solid #e0e7ff;
+}
+
+.uaf-panel-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+}
+
+/* Fee table inside panel */
+.uaf-fee-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+    .uaf-fee-table thead tr {
+        background: #f1f5f9;
+    }
+
+    .uaf-fee-table th {
+        padding: 10px 14px;
+        text-align: left;
+        font-weight: 600;
+        color: #475569;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+
+    .uaf-fee-table td {
+        padding: 10px 14px;
+        border-top: 1px solid #f1f5f9;
+        vertical-align: middle;
+    }
+
+.uaf-paid-row {
+    background: #f9fafb;
+    opacity: 0.7;
+}
+
+.uaf-checkbox {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    accent-color: #6366f1;
+}
+
+.uaf-amount-input {
+    width: 100px;
+    padding: 6px 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+    .uaf-amount-input:disabled, .uaf-remarks-input:disabled {
+        background: #f8fafc;
+        color: #94a3b8;
+    }
+
+.uaf-remarks-input {
+    width: 180px;
+    padding: 6px 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+/* Status badges */
+.fee-code-badge {
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+    .status-badge.paid {
+        background: #dcfce7;
+        color: #166534;
+    }
+
+    .status-badge.pending {
+        background: #fef9c3;
+        color: #854d0e;
+    }
+
+    .status-badge.new {
+        background: #f1f5f9;
+        color: #94a3b8;
+    }
+
+/* Panel footer */
+.uaf-panel-footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 8px;
+}
+
+.uaf-update-btn {
+    padding: 9px 24px;
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s;
+}
+
+    .uaf-update-btn:hover:not(:disabled) {
+        background: #4f46e5;
+    }
+
+    .uaf-update-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+.uaf-hint {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+.uaf-loading, .uaf-empty {
+    text-align: center;
+    padding: 48px;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,401 @@
+/* ── Overlay ─────────────────────────────────────────────────────────────── */
+.rp-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* ── Modal Shell ─────────────────────────────────────────────────────────── */
+.rp-modal {
+    background: #fff;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 700px;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    overflow: hidden;
+}
+
+.rp-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.rp-modal-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.rp-close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #6b7280;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+}
+
+    .rp-close-btn:hover {
+        background: #f3f4f6;
+        color: #111827;
+    }
+
+.rp-scroll-body {
+    overflow-y: auto;
+    flex: 1;
+    padding: 1.25rem;
+}
+
+/* ── Receipt Card ─────────────────────────────────────────────────────────── */
+.rp-receipt {
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+}
+
+/* Header — Teal Brand */
+.rp-receipt-head {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    background: #01696f;
+    color: white;
+    padding: 1rem 1.25rem;
+}
+
+.rp-org-name {
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.rp-org-address {
+    font-size: 0.7rem;
+    opacity: 0.82;
+    margin-top: 2px;
+}
+
+/* Title Band */
+.rp-title-band {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #f0fafa;
+    padding: 0.875rem 1.25rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.rp-doc-type {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #01696f;
+    letter-spacing: 2.5px;
+    display: block;
+}
+
+.rp-sub-type {
+    font-size: 0.72rem;
+    color: #6b7280;
+    margin-top: 3px;
+    display: block;
+}
+
+.rp-title-right {
+    text-align: right;
+}
+
+.rp-receipt-no-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #9ca3af;
+}
+
+.rp-receipt-no {
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    color: #01696f;
+    margin-top: 2px;
+}
+
+.rp-receipt-date {
+    font-size: 0.68rem;
+    color: #6b7280;
+    margin-top: 3px;
+}
+
+/* Section Labels */
+.rp-section-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #9ca3af;
+    font-weight: 600;
+    padding: 0.75rem 1.25rem 0.25rem;
+    border-top: 1px solid #f3f4f6;
+}
+
+/* Student Details Grid */
+.rp-details-grid {
+    padding: 0.25rem 1.25rem 0.75rem;
+}
+
+.rp-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.35rem 0;
+    border-bottom: 1px dashed #f3f4f6;
+    font-size: 0.82rem;
+    gap: 1rem;
+}
+
+.rp-detail-key {
+    color: #6b7280;
+    flex-shrink: 0;
+}
+
+.rp-detail-val {
+    font-weight: 600;
+    color: #111827;
+    text-align: right;
+}
+
+.rp-mono {
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+}
+
+/* Fee Table */
+.rp-fee-table {
+    padding: 0.25rem 1.25rem 0.75rem;
+}
+
+.rp-fee-thead {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #9ca3af;
+    font-weight: 600;
+    padding: 0.3rem 0;
+    border-bottom: 2px solid #e5e7eb;
+    margin-bottom: 0.25rem;
+}
+
+.rp-fee-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    font-size: 0.82rem;
+    border-bottom: 1px dashed #f3f4f6;
+}
+
+    .rp-fee-row.concession {
+        color: #437a22;
+        font-size: 0.78rem;
+    }
+
+.rp-fee-divider {
+    border-top: 2px solid #e5e7eb;
+    margin: 0.5rem 0;
+}
+
+.rp-fee-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.3rem 0;
+}
+
+.rp-total-val {
+    color: #01696f;
+}
+
+/* Balance Row */
+.rp-balance-row {
+    display: flex;
+    gap: 1px;
+    background: #e5e7eb;
+}
+
+.rp-balance-item {
+    flex: 1;
+    background: #f9fafb;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+    .rp-balance-item.green {
+        background: #f0fdf4;
+    }
+
+    .rp-balance-item.red {
+        background: #fef2f2;
+    }
+
+.rp-bal-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #9ca3af;
+}
+
+.rp-bal-val {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-top: 3px;
+    color: #111827;
+}
+
+.rp-balance-item.green .rp-bal-val {
+    color: #15803d;
+}
+
+.rp-balance-item.red .rp-bal-val {
+    color: #b91c1c;
+}
+
+/* Payment Mode */
+.rp-payment-mode-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid #f3f4f6;
+}
+
+.rp-pm-label {
+    font-size: 0.78rem;
+    color: #6b7280;
+}
+
+.rp-pm-badge {
+    background: #e0f2f1;
+    color: #01696f;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 999px;
+}
+
+/* Receipt Footer */
+.rp-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0.875rem 1.25rem;
+    background: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    gap: 1rem;
+}
+
+.rp-footer-note {
+    font-size: 0.68rem;
+    color: #9ca3af;
+    font-style: italic;
+}
+
+.rp-footer-id {
+    font-size: 0.65rem;
+    color: #d1d5db;
+    margin-top: 4px;
+    font-family: 'Courier New', monospace;
+}
+
+.rp-seal-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2.5px double #01696f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #01696f;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    opacity: 0.55;
+    flex-shrink: 0;
+}
+
+/* ── Modal Footer Buttons ─────────────────────────────────────────────────── */
+.rp-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 0.875rem 1.25rem;
+    border-top: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.rp-btn-secondary {
+    background: none;
+    border: 1px solid #d1d5db;
+    color: #374151;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.5rem 1.1rem;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+    .rp-btn-secondary:hover {
+        background: #f3f4f6;
+    }
+
+.rp-btn-print {
+    background: #01696f;
+    color: #fff;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+    .rp-btn-print:hover {
+        background: #0c4e54;
+    }
+
+/* ── Print Media ─────────────────────────────────────────────────────────── */
+@media print {
+    .rp-overlay, .rp-modal-header, .rp-modal-footer {
+        display: none !important;
+    }
+
+    .rp-scroll-body {
+        overflow: visible;
+    }
+
+    .rp-receipt {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}

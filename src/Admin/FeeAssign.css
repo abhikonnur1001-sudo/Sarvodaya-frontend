@@ -1,0 +1,422 @@
+.fa-container {
+    padding: 2rem 2.5rem;
+    max-width: 1000px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ── Page Header ── */
+.fa-page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.75rem;
+}
+
+.fa-page-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0 0 0.25rem;
+}
+
+.fa-page-subtitle {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+.fa-back-btn {
+    padding: 0.5rem 1rem;
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+
+    .fa-back-btn:hover {
+        background: #e5e7eb;
+    }
+
+/* ── Notification ── */
+.fa-notification {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+    .fa-notification.success {
+        background: #ecfdf5;
+        color: #065f46;
+        border: 1px solid #a7f3d0;
+    }
+
+    .fa-notification.error {
+        background: #fef2f2;
+        color: #991b1b;
+        border: 1px solid #fecaca;
+    }
+
+/* ── Card ── */
+.fa-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+}
+
+.fa-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1.25rem;
+    border-bottom: 1px solid #f3f4f6;
+    background: #fafafa;
+}
+
+.fa-card-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.fa-card-body {
+    padding: 1.25rem;
+}
+
+/* ── Academic Year ── */
+.fa-active-badge {
+    background: #ecfdf5;
+    color: #065f46;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid #a7f3d0;
+}
+
+.fa-year-form {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.fa-create-btn {
+    padding: 0.58rem 1.25rem;
+    background: #c0392b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s;
+    white-space: nowrap;
+}
+
+    .fa-create-btn:hover:not(:disabled) {
+        background: #a93226;
+    }
+
+    .fa-create-btn:disabled {
+        background: #6b7280;
+        cursor: not-allowed;
+    }
+
+/* ── Tabs ── */
+.fa-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1.25rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f9fafb;
+}
+
+.fa-tab {
+    flex: 1;
+    padding: 0.7rem 1rem;
+    background: none;
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #6b7280;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+    .fa-tab:hover {
+        background: #f3f4f6;
+        color: #374151;
+    }
+
+    .fa-tab.active {
+        background: #c0392b;
+        color: #fff;
+    }
+
+/* ── Tab Content ── */
+.fa-tab-content {
+}
+
+.fa-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+@media (max-width: 720px) {
+    .fa-two-col {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Form ── */
+.fa-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.fa-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+    .fa-field label {
+        font-size: 0.76rem;
+        font-weight: 700;
+        color: #374151;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+
+    .fa-field input,
+    .fa-field select {
+        padding: 0.55rem 0.85rem;
+        border: 1.5px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 0.88rem;
+        color: #111827;
+        background: #fff;
+        outline: none;
+        transition: border-color 0.18s, box-shadow 0.18s;
+    }
+
+        .fa-field input:focus, .fa-field select:focus {
+            border-color: #c0392b;
+            box-shadow: 0 0 0 3px rgba(192,57,43,0.12);
+        }
+
+.fa-readonly {
+    background: #f9fafb !important;
+    color: #6b7280 !important;
+    cursor: default;
+}
+
+.fa-hint {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.fa-warn {
+    font-size: 0.78rem;
+    color: #b45309;
+}
+
+.req {
+    color: #ef4444;
+}
+
+.fa-submit-btn {
+    padding: 0.62rem 1.25rem;
+    background: #c0392b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.18s;
+    margin-top: 0.25rem;
+}
+
+    .fa-submit-btn:hover:not(:disabled) {
+        background: #a93226;
+    }
+
+    .fa-submit-btn:disabled {
+        background: #d1d5db;
+        cursor: not-allowed;
+    }
+
+/* ── View All Button ── */
+.fa-view-all-btn {
+    padding: 0.3rem 0.75rem;
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+    .fa-view-all-btn:hover:not(:disabled) {
+        background: #dbeafe;
+    }
+
+    .fa-view-all-btn:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+
+/* ── Mini Table ── */
+.fa-mini-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+    .fa-mini-table thead tr {
+        background: #f9fafb;
+        border-bottom: 2px solid #e5e7eb;
+    }
+
+    .fa-mini-table th {
+        padding: 0.6rem 0.85rem;
+        text-align: left;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: #6b7280;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .fa-mini-table tbody tr {
+        border-bottom: 1px solid #f3f4f6;
+        transition: background 0.12s;
+    }
+
+        .fa-mini-table tbody tr:hover {
+            background: #fafafa;
+        }
+
+    .fa-mini-table td {
+        padding: 0.65rem 0.85rem;
+        color: #374151;
+    }
+
+.fa-amount {
+    font-weight: 700;
+    color: #065f46;
+}
+
+.fa-code-badge {
+    background: #fef3c7;
+    color: #92400e;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.18rem 0.55rem;
+    border-radius: 5px;
+    border: 1px solid #fde68a;
+}
+
+.fa-type-badge {
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 600;
+    font-size: 0.78rem;
+    padding: 0.18rem 0.55rem;
+    border-radius: 5px;
+    border: 1px solid #bfdbfe;
+}
+
+/* ── Empty ── */
+.fa-empty {
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 0.88rem;
+}
+
+/* ── Modal ── */
+.fa-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    padding: 1rem;
+}
+
+.fa-modal {
+    background: #fff;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 560px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.fa-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #1a1a2e;
+    background: #fafafa;
+}
+
+.fa-modal-close {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #6b7280;
+    padding: 0.25rem;
+}
+
+    .fa-modal-close:hover {
+        color: #ef4444;
+    }
+
+.fa-modal-body {
+    padding: 1.25rem;
+    overflow-y: auto;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    .fa-container {
+        padding: 1rem;
+    }
+
+    .fa-year-form {
+        flex-direction: column;
+    }
+
+    .fa-create-btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,255 @@
+.nc-container {
+	padding: 2rem 2.5rem;
+	font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header */
+.nc-page-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 1.5rem;
+}
+
+.nc-title {
+	font-size: 1.4rem;
+	font-weight: 700;
+	color: #1a1a2e;
+	margin: 0 0 0.2rem;
+}
+
+.nc-subtitle {
+	font-size: 0.83rem;
+	color: #6b7280;
+	margin: 0;
+}
+
+.nc-refresh-btn {
+	padding: 0.42rem 1rem;
+	background: #f3f4f6;
+	color: #374151;
+	border: 1px solid #d1d5db;
+	border-radius: 8px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+	.nc-refresh-btn:hover {
+		background: #e5e7eb;
+	}
+
+/* Stats */
+.nc-stats-row {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	margin-bottom: 1.25rem;
+}
+
+.nc-stat {
+	background: #fff;
+	border-radius: 12px;
+	padding: 0.9rem 1.4rem;
+	border: 1px solid #e5e7eb;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+	min-width: 140px;
+	text-align: center;
+}
+
+	.nc-stat.green .nc-stat-value {
+		color: #059669;
+	}
+
+	.nc-stat.red .nc-stat-value {
+		color: #dc2626;
+	}
+
+.nc-stat-value {
+	font-size: 1.3rem;
+	font-weight: 800;
+	color: #1f2937;
+}
+
+.nc-stat-label {
+	font-size: 0.72rem;
+	color: #6b7280;
+	font-weight: 600;
+	margin-top: 0.2rem;
+}
+
+/* Toolbar */
+.nc-toolbar {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.nc-search {
+	flex: 1;
+	max-width: 400px;
+	padding: 0.52rem 1rem;
+	border: 1.5px solid #d1d5db;
+	border-radius: 8px;
+	font-size: 0.875rem;
+	outline: none;
+	transition: border-color 0.15s;
+}
+
+	.nc-search:focus {
+		border-color: #b91c1c;
+	}
+
+.nc-count {
+	font-size: 0.78rem;
+	color: #9ca3af;
+	margin-left: auto;
+}
+
+/* Table wrap */
+.nc-table-wrap {
+	background: #fff;
+	border-radius: 14px;
+	border: 1px solid #e5e7eb;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+	overflow: hidden;
+}
+
+.nc-state {
+	padding: 3rem;
+	text-align: center;
+	color: #9ca3af;
+	font-size: 0.93rem;
+}
+
+	.nc-state.error {
+		color: #dc2626;
+	}
+
+/* Table */
+.nc-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.84rem;
+}
+
+	.nc-table thead {
+		background: #f8f9fa;
+		border-bottom: 2px solid #e5e7eb;
+	}
+
+		.nc-table thead th {
+			padding: 0.7rem 0.85rem;
+			font-size: 0.72rem;
+			font-weight: 700;
+			color: #6b7280;
+			text-transform: uppercase;
+			letter-spacing: 0.04em;
+			text-align: left;
+			white-space: nowrap;
+		}
+
+	.nc-table tbody tr {
+		border-bottom: 1px solid #f3f4f6;
+		transition: background 0.1s;
+	}
+
+		.nc-table tbody tr:hover {
+			background: #fafafa;
+		}
+
+		.nc-table tbody tr:last-child {
+			border-bottom: none;
+		}
+
+	.nc-table td {
+		padding: 0.72rem 0.85rem;
+		color: #374151;
+		vertical-align: middle;
+	}
+
+/* Cell helpers */
+.nc-sl {
+	color: #9ca3af;
+	width: 36px;
+}
+
+.nc-name {
+	font-weight: 600;
+	color: #111827;
+	white-space: nowrap;
+}
+
+.nc-enroll {
+	font-family: monospace;
+	font-size: 0.78rem;
+	white-space: nowrap;
+}
+
+.nc-school {
+	font-size: 0.82rem;
+	color: #374151;
+}
+
+.nc-num {
+	text-align: right;
+	white-space: nowrap;
+	font-variant-numeric: tabular-nums;
+}
+
+	.nc-num.concession {
+		color: #d97706;
+		font-size: 0.8rem;
+	}
+
+	.nc-num.paid {
+		color: #059669;
+		font-weight: 600;
+	}
+
+.nc-bal-due {
+	color: #dc2626;
+	font-weight: 700;
+}
+
+/* Action buttons */
+.nc-action-btn {
+	padding: 0.36rem 0.85rem;
+	border: none;
+	border-radius: 7px;
+	font-size: 0.78rem;
+	font-weight: 700;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: background 0.15s;
+}
+
+	.nc-action-btn.active {
+		background: #b91c1c;
+		color: #fff;
+	}
+
+		.nc-action-btn.active:hover {
+			background: #991b1b;
+		}
+
+	.nc-action-btn.update {
+		background: #1d4ed8;
+		color: #fff;
+	}
+
+		.nc-action-btn.update:hover {
+			background: #1e40af;
+		}
+
+/* Responsive */
+@media (max-width: 900px) {
+	.nc-container {
+		padding: 1rem;
+	}
+
+	.nc-table-wrap {
+		overflow-x: auto;
+	}
+}

@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { login } from "./authService";
+import { enterFullscreen } from "../utils/fullscreen";
 import "./Login.css";
 
-export default function Login({ onLogin }) {
+export default function Login() {
     const generateCaptcha = () => {
         const chars = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789";
         let text = "";
@@ -12,7 +14,7 @@ export default function Login({ onLogin }) {
         }
         return text;
     };
-
+    const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
@@ -42,7 +44,10 @@ export default function Login({ onLogin }) {
 
         try {
             const role = await login(username, password);
-            onLogin(role);
+            await enterFullscreen();
+            // 🔥 FIX: Proper navigation
+            navigate(`/${role.toLowerCase()}`, { replace: true });
+
         } catch {
             setError("Invalid username or password.");
             refreshCaptcha();

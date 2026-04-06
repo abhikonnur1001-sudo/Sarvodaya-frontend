@@ -1,0 +1,270 @@
+/* Your complete HeadmasterDashboard.css with dropdown styles added */
+
+.dashboard-container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-header {
+	background: linear-gradient(90deg, #dc2626, #ef4444);
+	color: white;
+	padding: 15px 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-left {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.logo {
+	height: 50px;
+	width: auto;
+}
+
+.school-name {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.role-label {
+	font-size: 12px;
+	opacity: 0.9;
+	margin-top: 2px;
+}
+
+.profile-avatar {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.user-profile {
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+}
+
+.logout-btn {
+	padding: 10px 20px;
+	background: rgba(255, 255, 255, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 25px;
+	color: white;
+	font-weight: 600;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+	.logout-btn:hover {
+		background: rgba(255,255,255,0.3);
+	}
+
+.dashboard-body {
+	display: flex;
+	flex: 1;
+	overflow: hidden;
+}
+.menu-btn {
+	width: 100%;
+	padding: 16px 32px;
+	background: none;
+	border: none;
+	color: #64748b;
+	font-weight: 500;
+	font-size: 0.95rem;
+	cursor: pointer;
+	text-align: left;
+	border-left: 4px solid transparent;
+	transition: 0.2s;
+}
+   .menu-btn:hover {
+	background: #f8fafc;
+	color: #374151;
+   }
+
+.menu-dropdown:hover .menu-btn {
+	background: linear-gradient(90deg, rgba(185, 28, 28, 0.1), transparent);
+	color: #b91c1c;
+	border-left-color: #dc2626;
+}
+
+
+/* FIXED DROPDOWN STYLES */
+
+
+.dropdown-content {
+	display: none;
+	flex-direction: column;
+	gap: 6px;
+	background: #fff7f7;
+	margin: 6px 16px 10px 20px;
+	padding: 8px;
+	border-radius: 14px;
+	border: 1px solid #f3d0d0;
+	box-shadow: 0 10px 24px rgba(185, 28, 28, 0.08);
+}
+
+.menu-dropdown:hover .dropdown-content {
+	display: flex;
+}
+
+.dropdown-content button {
+	width: 100%;
+	border: none;
+	background: white;
+	color: #475569;
+	text-align: left;
+	padding: 12px 14px;
+	border-radius: 10px;
+	font-size: 0.88rem;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+	.dropdown-content button:hover {
+		background: #fee2e2;
+		color: #b91c1c;
+	}
+.sidebar-item {
+	width: 100%;
+	padding: 16px 32px;
+	background: none;
+	border: none;
+	color: #64748b;
+	font-weight: 500;
+	font-size: 0.95rem;
+	cursor: pointer;
+	text-align: left;
+	border-left: 4px solid transparent;
+	transition: 0.2s;
+}
+	.sidebar-item:hover {
+		background: linear-gradient(90deg, rgba(185, 28, 28, 0.1), transparent);
+		color: #b91c1c;
+		border-left-color: #dc2626;
+	}
+
+/* Ensure sidebar allows absolute positioning */
+.dashboard-sidebar {
+	width: 280px;
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(12px);
+	border-right: 1px solid #e2e8f0;
+	padding: 20px 0;
+	overflow-y: auto;
+}
+
+
+/* Rest of your existing styles */
+.dashboard-content {
+	flex: 1;
+	background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+	padding: 30px;
+	overflow-y: auto;
+}
+
+.content-grid {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.overview-card {
+	background: white;
+	border-radius: 12px;
+	padding: 25px;
+	box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+	margin-bottom: 25px;
+}
+
+	.overview-card h3 {
+		margin: 0 0 20px 0;
+		color: #1e293b;
+		font-size: 22px;
+	}
+
+.stats-row {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 20px;
+}
+
+.stat-box {
+	text-align: center;
+	padding: 20px;
+	background: #f8fafc;
+	border-radius: 10px;
+}
+
+.stat-number {
+	font-size: 32px;
+	font-weight: bold;
+	color: #059669;
+	margin-bottom: 5px;
+}
+
+.stat-label {
+	color: #64748b;
+	font-size: 14px;
+}
+
+.charts-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 25px;
+	margin-bottom: 25px;
+}
+
+.chart-card {
+	background: white;
+	border-radius: 12px;
+	padding: 25px;
+	box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+	.chart-card h4 {
+		margin: 0 0 20px 0;
+		color: #1e293b;
+		font-size: 18px;
+	}
+
+.chart-placeholder {
+	height: 200px;
+	background: linear-gradient(90deg, #e2e8f0 0%, #f1f5f9 50%, #e2e8f0 100%);
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+	color: #94a3b8;
+}
+
+.notices-card {
+	background: white;
+	border-radius: 12px;
+	padding: 25px;
+	box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+	.notices-card h4 {
+		margin: 0 0 20px 0;
+		color: #1e293b;
+	}
+
+	.notices-card ul {
+		margin: 0;
+		padding-left: 20px;
+	}
+
+	.notices-card li {
+		color: #475569;
+		margin-bottom: 10px;
+		line-height: 1.5;
+	}
