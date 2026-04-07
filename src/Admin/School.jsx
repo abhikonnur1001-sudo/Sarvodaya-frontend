@@ -23,9 +23,10 @@ export default function AddSchool({ goBack }) {
                 api.get("/schools"),
                 api.get("/accounts/headmasters")
             ]);
+            console.log("Headmasters:", hmRes.data);
             setSchools(schoolRes.data);
             setHeadmasters(hmRes.data);
-        } catch (err) {
+        } catch  {
             notify("error", "Failed to load data.");
         }
     };

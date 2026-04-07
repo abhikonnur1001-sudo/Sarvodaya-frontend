@@ -39,19 +39,25 @@ export default function FeeAssign({ goBack }) {
 
     const loadActiveYear = async () => {
         try { const res = await api.get("/academicyears/active"); setAcademicYear(res.data); }
-        catch { }
+        catch {/* silently ignore */  }
     };
     const loadSchools = async () => {
         try { const res = await api.get("/schools"); setSchools(res.data); }
-        catch { }
+        catch {/* silently ignore */  }
     };
     const loadClasses = async () => {
         try { const res = await api.get("/classes"); setClasses(res.data); }
-        catch { }
+        catch { /* silently ignore */ }
     };
     const loadStudentTypes = async () => {
-        try { const res = await api.get("/admin/student-types"); setStudentTypes(res.data); }
-        catch { }
+        try {
+            const res = await api.get("/admin/student-types");
+            console.log("Student Types:", res.data);
+            setStudentTypes(res.data);
+        }
+        catch(err) {
+            console.error("Student types error:", err);
+        }
     };
 
     const filteredClasses = classes.filter(

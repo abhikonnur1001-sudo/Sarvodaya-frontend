@@ -7,6 +7,7 @@ import AddSchool from "./School";
 import AddClass from "./AddClass";
 import FeeAssign from "./FeeAssign";
 import UserList from "./UserList";
+import StudentTypes from "./StudentType";
 import AdditionalFeeManager from "./AdditionalFeeManager";
 const name = sessionStorage.getItem("name");
 
@@ -75,6 +76,7 @@ const AdminDashboard = () => {
                             <div className="dropdown-content">
                                 <button onClick={() => setActivePage("addSchool")}>Add School</button>
                                 <button onClick={() => setActivePage("addClass")}>Add Classes</button>
+                                <button onClick={() => setActivePage("student-types")}>Add StudentTypes</button>
                                 <button onClick={() => setActivePage("feeAssign")}>Fee Assign</button>
                                 <button onClick={() => setActivePage("additionalFee")}>Additional Fees</button>
                                 <button onClick={() => setActivePage("stockAssign")}>Stock Assign</button>
@@ -204,6 +206,7 @@ const AdminDashboard = () => {
                     {activePage === "feeAssign" && <FeeAssign goBack={() => setActivePage("dashboard")} />}
                     {activePage === "additionalFee" && <AdditionalFeeManager userRole="Administrator" goBack={() => setActivePage("dashboard")} />}
                     {activePage === "userlist" && <UserList goBack={() => setActivePage("dashboard")} />}
+                    {activePage === "student-types" && <StudentTypes goBack={() =>setActivePage("dashboard")} />}
 
                 </div>
             </div>

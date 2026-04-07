@@ -1,0 +1,315 @@
+/* ─── Container ─── */
+.st-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 28px 24px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ─── Page Header ─── */
+.st-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.st-page-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e1b4b;
+    margin: 0;
+}
+
+.st-page-subtitle {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 4px 0 0 0;
+}
+
+.st-back-btn {
+    background: #ede9fe;
+    color: #5b21b6;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+    .st-back-btn:hover {
+        background: #5b21b6;
+        color: white;
+    }
+
+/* ─── Notification ─── */
+.st-notification {
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+    .st-notification.success {
+        background: #f0fdf4;
+        color: #15803d;
+        border: 1px solid #bbf7d0;
+    }
+
+    .st-notification.error {
+        background: #fef2f2;
+        color: #dc2626;
+        border: 1px solid #fecaca;
+    }
+
+/* ─── Card ─── */
+.st-card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.st-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+}
+
+.st-card-title {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.st-badge {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* ─── Form ─── */
+.st-form {
+    padding: 20px;
+}
+
+.st-form-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.st-field {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 160px;
+}
+
+    .st-field label {
+        font-size: 12px;
+        font-weight: 600;
+        color: #374151;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+    }
+
+    .st-field input {
+        padding: 9px 12px;
+        border: 1.5px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #111827;
+        outline: none;
+        transition: border 0.2s;
+    }
+
+        .st-field input:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+        }
+
+.req {
+    color: #ef4444;
+}
+
+.st-field-btn {
+    flex: 0 0 auto;
+}
+
+.st-add-btn {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+}
+
+    .st-add-btn:hover {
+        opacity: 0.88;
+    }
+
+    .st-add-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+/* ─── Table ─── */
+.st-table-wrapper {
+    padding: 0 20px 20px;
+}
+
+.st-empty {
+    text-align: center;
+    padding: 40px;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.st-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+    .st-table thead tr {
+        background: #f5f3ff;
+    }
+
+    .st-table th {
+        padding: 11px 14px;
+        text-align: left;
+        font-size: 12px;
+        font-weight: 700;
+        color: #4f46e5;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 2px solid #ede9fe;
+    }
+
+    .st-table tbody tr {
+        border-bottom: 1px solid #f3f4f6;
+        transition: background 0.15s;
+    }
+
+        .st-table tbody tr:hover {
+            background: #faf5ff;
+        }
+
+.st-index {
+    color: #9ca3af;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* ─── Code Badge ─── */
+.st-code-badge {
+    background: #ede9fe;
+    color: #5b21b6;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.st-type-name {
+    color: #111827;
+    font-weight: 500;
+}
+
+/* ─── Inline Edit Input ─── */
+.st-inline-input {
+    padding: 6px 10px;
+    border: 1.5px solid #6366f1;
+    border-radius: 6px;
+    font-size: 13px;
+    width: 100%;
+    outline: none;
+}
+
+/* ─── Action Buttons ─── */
+.st-action-cell {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.st-edit-btn {
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+    .st-edit-btn:hover {
+        background: #2563eb;
+        color: white;
+    }
+
+.st-delete-btn {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+    .st-delete-btn:hover {
+        background: #dc2626;
+        color: white;
+    }
+
+.st-save-btn {
+    background: #f0fdf4;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+    .st-save-btn:hover {
+        background: #16a34a;
+        color: white;
+    }
+
+.st-cancel-btn {
+    background: #f9fafb;
+    color: #6b7280;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+    .st-cancel-btn:hover {
+        background: #6b7280;
+        color: white;
+    }
