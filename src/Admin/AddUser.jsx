@@ -12,15 +12,18 @@ const ROLES = [
 const AddUser = ({ goBack }) => {
     const [formData, setFormData] = useState({
         username: "", password: "", fullName: "", phoneNumber: "",
-        email: "", address: "", dateOfBirth: "", role: "",
+        email: "", confirmEmail: "", address: "", dateOfBirth: "", role: "",
     });
     const [notification, setNotification] = useState(null);
     const [loading, setLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
+    const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
+        // Clear error on change
+        setErrors(prev => ({ ...prev, [name]: "" }));
     };
 
     const notify = (type, message) => {
@@ -28,8 +31,39 @@ const AddUser = ({ goBack }) => {
         setTimeout(() => setNotification(null), 4000);
     };
 
+    const validate = () => {
+        const newErrors = {};
+
+        // Email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (formData.email && !emailRegex.test(formData.email)) {
+            newErrors.email = "Enter a valid email address.";
+        }
+
+        // Confirm email match
+        if (formData.email && formData.confirmEmail !== formData.email) {
+            newErrors.confirmEmail = "Emails do not match.";
+        }
+
+        // Phone — 10 digits, starts with 6-9
+        const phoneRegex = /^[6-9]\d{9}$/;
+        if (formData.phoneNumber && !phoneRegex.test(formData.phoneNumber)) {
+            newErrors.phoneNumber = "Enter a valid 10-digit Indian mobile number.";
+        }
+
+        // Password min length
+        if (formData.password && formData.password.length < 8) {
+            newErrors.password = "Password must be at least 8 characters.";
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!validate()) return; // ✅ stop if validation fails
+
         setLoading(true);
         try {
             const payload = {
@@ -46,8 +80,9 @@ const AddUser = ({ goBack }) => {
             notify("success", response.data.message || "User created successfully.");
             setFormData({
                 username: "", password: "", fullName: "", phoneNumber: "",
-                email: "", address: "", dateOfBirth: "", role: ""
+                email: "", confirmEmail: "", address: "", dateOfBirth: "", role: ""
             });
+            setErrors({});
         } catch (error) {
             notify("error", error?.response?.data || "Failed to create user.");
         } finally {
@@ -76,7 +111,7 @@ const AddUser = ({ goBack }) => {
             <div className="au-card">
                 <form className="au-form" onSubmit={handleSubmit}>
 
-                    {/* Section: Account Info */}
+                    {/* Account Credentials */}
                     <div className="au-section-label">🔐 Account Credentials</div>
                     <div className="au-form-row">
                         <div className="au-field">
@@ -87,18 +122,24 @@ const AddUser = ({ goBack }) => {
                         <div className="au-field">
                             <label>Password <span className="req">*</span></label>
                             <div className="au-password-wrap">
-                                <input type={showPassword ? "text" : "password"} name="password"
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    name="password"
                                     placeholder="Min. 8 characters"
-                                    value={formData.password} onChange={handleChange} required />
+                                    value={formData.password}
+                                    onChange={handleChange}
+                                    className={errors.password ? "au-input-error" : ""}
+                                    required />
                                 <button type="button" className="au-toggle-pw"
                                     onClick={() => setShowPassword(p => !p)}>
                                     {showPassword ? "🙈" : "👁️"}
                                 </button>
                             </div>
+                            {errors.password && <small className="au-field-error">⚠️ {errors.password}</small>}
                         </div>
                     </div>
 
-                    {/* Section: Personal Info */}
+                    {/* Personal Info */}
                     <div className="au-section-label">👤 Personal Information</div>
                     <div className="au-form-row">
                         <div className="au-field au-field-wide">
@@ -116,13 +157,47 @@ const AddUser = ({ goBack }) => {
                     <div className="au-form-row">
                         <div className="au-field">
                             <label>Phone Number</label>
-                            <input type="text" name="phoneNumber" placeholder="e.g. 9876543210"
-                                value={formData.phoneNumber} onChange={handleChange} maxLength={15} />
+                            <input
+                                type="text" name="phoneNumber"
+                                placeholder="e.g. 9876543210"
+                                value={formData.phoneNumber}
+                                onChange={handleChange}
+                                maxLength={10}
+                                className={errors.phoneNumber ? "au-input-error" : ""}
+                            />
+                            {errors.phoneNumber && <small className="au-field-error">⚠️ {errors.phoneNumber}</small>}
                         </div>
                         <div className="au-field au-field-wide">
                             <label>Email</label>
-                            <input type="email" name="email" placeholder="e.g. john@sarvodaya.edu"
-                                value={formData.email} onChange={handleChange} />
+                            <input
+                                type="email" name="email"
+                                placeholder="e.g. john@sarvodaya.edu"
+                                value={formData.email}
+                                onChange={handleChange}
+                                className={errors.email ? "au-input-error" : ""}
+                            />
+                            {errors.email && <small className="au-field-error">⚠️ {errors.email}</small>}
+                        </div>
+                    </div>
+
+                    {/* ✅ Confirm Email row */}
+                    <div className="au-form-row">
+                        <div className="au-field au-field-wide">
+                            <label>Confirm Email</label>
+                            <input
+                                type="email" name="confirmEmail"
+                                placeholder="Re-enter email"
+                                value={formData.confirmEmail}
+                                onChange={handleChange}
+                                className={errors.confirmEmail ? "au-input-error" : ""}
+                            />
+                            {errors.confirmEmail && <small className="au-field-error">⚠️ {errors.confirmEmail}</small>}
+                            {/* ✅ Show green tick when emails match and both filled */}
+                            {formData.email && formData.confirmEmail &&
+                                formData.email === formData.confirmEmail &&
+                                !errors.confirmEmail && (
+                                    <small className="au-field-success">✅ Email matched</small>
+                                )}
                         </div>
                     </div>
 
@@ -134,7 +209,7 @@ const AddUser = ({ goBack }) => {
                         </div>
                     </div>
 
-                    {/* Section: Role */}
+                    {/* Role */}
                     <div className="au-section-label">🎯 Assign Role <span className="req">*</span></div>
                     <div className="au-role-grid">
                         {ROLES.map(r => (
@@ -155,10 +230,14 @@ const AddUser = ({ goBack }) => {
                             {loading ? "Creating…" : "✅ Create User"}
                         </button>
                         <button type="button" className="au-reset-btn"
-                            onClick={() => setFormData({
-                                username: "", password: "", fullName: "",
-                                phoneNumber: "", email: "", address: "", dateOfBirth: "", role: ""
-                            })}>
+                            onClick={() => {
+                                setFormData({
+                                    username: "", password: "", fullName: "",
+                                    phoneNumber: "", email: "", confirmEmail: "",
+                                    address: "", dateOfBirth: "", role: ""
+                                });
+                                setErrors({});
+                            }}>
                             Reset Form
                         </button>
                     </div>

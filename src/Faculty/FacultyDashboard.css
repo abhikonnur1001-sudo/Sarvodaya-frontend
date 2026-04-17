@@ -1,0 +1,159 @@
+/* Reuses HeadMasterDashboard.css base classes:
+   dashboard-container, dashboard-header, header-left, header-right,
+   logo, school-name, role-label, user-profile, profile-avatar,
+   logout-btn, dashboard-body, dashboard-sidebar, dashboard-content,
+   sidebar-menu, menu-btn, menu-dropdown, dropdown-content,
+   overview-card, stats-row, stat-box, stat-number, stat-label
+   — import that CSS or copy it here */
+
+@import "../HeadMaster/HeadMasterDashboard.css";
+
+/* FACULTY-SPECIFIC */
+
+.menu-btn-active {
+    background: linear-gradient(90deg, rgba(185, 28, 28, 0.1), transparent) !important;
+    color: #b91c1c !important;
+    border-left-color: #dc2626 !important;
+}
+
+.stat-label-warn {
+    color: #dc2626 !important;
+    font-weight: 600;
+}
+
+/* CATEGORY GRID on dashboard */
+.fac-category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.fac-category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 16px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 14px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+    .fac-category-card:hover {
+        background: #fee2e2;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(185, 28, 28, 0.1);
+    }
+
+.fac-cat-icon {
+    font-size: 1.8rem;
+}
+
+.fac-cat-name {
+    font-weight: 700;
+    color: #1f2937;
+    font-size: 0.95rem;
+}
+
+.fac-cat-count {
+    font-size: 0.8rem;
+    color: #64748b;
+    background: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+/* PAGE HEADER */
+.fac-page-wrap {
+    background: white;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.fac-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 28px;
+    border-bottom: 1px solid #f1f5f9;
+    background: #fafbfc;
+}
+
+.fac-page-title {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.fac-page-subtitle {
+    margin: 4px 0 0;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.fac-back-btn {
+    padding: 10px 20px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 25px;
+    color: #475569;
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+    .fac-back-btn:hover {
+        background: #fee2e2;
+        color: #b91c1c;
+        border-color: #fca5a5;
+    }
+
+.fac-empty {
+    padding: 48px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+/* ASSIGNMENT CARDS */
+.fac-assignments-wrap {
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fac-assign-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.fac-assign-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: linear-gradient(90deg, #fef2f2, #fff7f7);
+    border-bottom: 1px solid #fecaca;
+}
+
+.fac-item-count {
+    font-size: 0.82rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.fac-low-tag {
+    font-size: 0.78rem;
+    color: #dc2626;
+    font-weight: 600;
+}

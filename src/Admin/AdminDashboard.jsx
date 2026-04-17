@@ -5,6 +5,7 @@ import { logout } from "../auth/authService";
 import AddUser from "./AddUser";
 import AddSchool from "./School";
 import AddClass from "./AddClass";
+import StockManagement from "./Stock/StockManagement";
 import FeeAssign from "./FeeAssign";
 import UserList from "./UserList";
 import StudentTypes from "./StudentType";
@@ -207,7 +208,7 @@ const AdminDashboard = () => {
                     {activePage === "additionalFee" && <AdditionalFeeManager userRole="Administrator" goBack={() => setActivePage("dashboard")} />}
                     {activePage === "userlist" && <UserList goBack={() => setActivePage("dashboard")} />}
                     {activePage === "student-types" && <StudentTypes goBack={() =>setActivePage("dashboard")} />}
-
+                    {activePage === "stockAssign" && <StockManagement goBack={() => setActivePage("dashboard")} />}
                 </div>
             </div>
         </div>

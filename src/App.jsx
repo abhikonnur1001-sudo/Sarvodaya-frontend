@@ -1,21 +1,24 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Login from "./auth/Login";
+import ForgotPassword from "./auth/ForgotPassword"; // ✅ NEW
 import { isLoggedIn, logout } from "./auth/authService";
 import { exitFullscreen } from "./utils/fullscreen";
 
 import AdminDashboard from "./Admin/AdminDashboard";
 import HeadMasterDashboard from "./HeadMaster/HeadMasterDashboard";
 import AccountsDashboard from "./Accountant/AccountsDashboard";
+import FacultyDashboard from "./Faculty/FacultyDashboard";
 
-// 🔒 Protected Route
 const ProtectedRoute = ({ children }) => {
     return isLoggedIn() ? children : <Navigate to="/login" />;
 };
+
 const handleLogout = async () => {
     await exitFullscreen();
     logout();
 };
+
 function App() {
     return (
         <BrowserRouter>
@@ -24,33 +27,33 @@ function App() {
                 {/* LOGIN */}
                 <Route path="/login" element={<Login />} />
 
+                {/* FORGOT PASSWORD */}
+                <Route path="/forgot-password" element={<ForgotPassword />} /> {/* ✅ NEW */}
+
                 {/* DASHBOARDS */}
-                <Route
-                    path="/administrator"
-                    element={
-                        <ProtectedRoute>
-                            <AdminDashboard onLogout={handleLogout} />
-                        </ProtectedRoute>
-                    }
-                />
+                <Route path="/administrator" element={
+                    <ProtectedRoute>
+                        <AdminDashboard onLogout={handleLogout} />
+                    </ProtectedRoute>
+                } />
 
-                <Route
-                    path="/headmaster"
-                    element={
-                        <ProtectedRoute>
-                            <HeadMasterDashboard onLogout={handleLogout} />
-                        </ProtectedRoute>
-                    }
-                />
+                <Route path="/headmaster" element={
+                    <ProtectedRoute>
+                        <HeadMasterDashboard onLogout={handleLogout} />
+                    </ProtectedRoute>
+                } />
 
-                <Route
-                    path="/accounts"
-                    element={
-                        <ProtectedRoute>
-                            <AccountsDashboard onLogout={handleLogout} />
-                        </ProtectedRoute>
-                    }
-                />
+                <Route path="/accounts" element={
+                    <ProtectedRoute>
+                        <AccountsDashboard onLogout={handleLogout} />
+                    </ProtectedRoute>
+                } />
+
+                <Route path="/faculty" element={
+                    <ProtectedRoute>
+                        <FacultyDashboard />
+                    </ProtectedRoute>
+                } />
 
                 {/* DEFAULT */}
                 <Route path="*" element={<Navigate to="/login" />} />

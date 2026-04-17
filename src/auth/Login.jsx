@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom"; // ✅ single import
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { login } from "./authService";
 import { enterFullscreen } from "../utils/fullscreen";
@@ -14,6 +14,7 @@ export default function Login() {
         }
         return text;
     };
+
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -45,8 +46,15 @@ export default function Login() {
         try {
             const role = await login(username, password);
             await enterFullscreen();
-            // 🔥 FIX: Proper navigation
-            navigate(`/${role.toLowerCase()}`, { replace: true });
+
+            if (role === "Administrator") navigate("/administrator", { replace: true });
+            else if (role === "HeadMaster") navigate("/headmaster", { replace: true });
+            else if (role === "Accounts") navigate("/accounts", { replace: true });
+            else if (role === "Faculty") navigate("/faculty", { replace: true });
+            else {
+                setError("Unknown role. Contact admin.");
+                refreshCaptcha();
+            }
 
         } catch {
             setError("Invalid username or password.");
@@ -59,18 +67,13 @@ export default function Login() {
             <div className="login-shell">
                 <div className="login-left">
                     <div className="brand-badge">🎓</div>
-
                     <img src="/logo.png" alt="Sarvodaya logo" className="school-logo" />
-
                     <h1>Sarvodaya Group of Institutions</h1>
-
                     <p className="brand-text">
                         Manage students, teachers, attendance, fees, reports, and academic
                         activities from one secure portal.
                     </p>
-
                     <div className="motto-box">Knowledge is power</div>
-
                     <ul className="feature-list">
                         <li>Student and staff record management</li>
                         <li>Attendance and academic monitoring</li>
@@ -152,11 +155,10 @@ export default function Login() {
                             <button type="submit" className="login-btn">
                                 Login
                             </button>
-
-                            <a href="/" className="forgot-link">
+                            <Link to="/forgot-password" className="forgot-link">
                                 Forgot password?
-                            </a>
-                        </div>
+                            </Link>
+                        </div> {/* ✅ closes login-actions only */}
 
                         <p className="contact-text">New user? Contact admin</p>
                     </form>
